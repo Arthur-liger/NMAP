@@ -7,12 +7,13 @@ const prepareScanRoutes = (app) => {
   // CREATE
   app.post("/scans", async (req, res) => {
     const { title, IP, option } = req.body
-    const result = nmap(IP, option) 
+    const result = await nmap(IP, option)
     console.log(result)
     const scan = await new ScanModel({
       title,
       result,
     })
+    console.log(scan)
 
     res.send({ result: scan })
   })
