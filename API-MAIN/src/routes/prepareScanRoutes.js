@@ -11,7 +11,7 @@ const prepareScanRoutes = (app) => {
     const scan = await new ScanModel({
       title,
       result,
-    })
+    }).save()
 
     res.send({ result: scan })
   })

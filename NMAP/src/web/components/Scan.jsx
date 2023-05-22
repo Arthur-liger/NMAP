@@ -3,7 +3,7 @@ import Link from "@/web/components/Link.jsx"
 
 const Scan = (props) => {
   const {
-    scan: { _id, IP, text },
+    scan: { _id, IP, result },
   } = props
 
   return (
@@ -14,7 +14,7 @@ const Scan = (props) => {
         </h1>
       </header>
       <div className="flex flex-col gap-2">
-        {text}
+        {result}
       </div>
     </article>
   )
